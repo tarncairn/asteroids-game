@@ -50,6 +50,12 @@ def main():
             if item.detect_collision(player):
                 print("Game over!")
                 sys.exit()
+        for item in asteroids:
+            for bullet in shots:
+                if item.detect_collision(bullet):
+                    item.split()
+                    bullet.kill()
+
 
         pygame.display.flip()
 
